@@ -1,6 +1,7 @@
 import MainBoxes from "./MainBoxes";
 import LastProductInDatabase from "./LastProductInDatabase.jsx";
 import BrandsInDb from "./BrandsInDb";
+import ProductsInDb from "./ProductsInDb"
 
 import {useState, useEffect} from "react";
 
@@ -17,6 +18,7 @@ function ContentRowTop() {
         if(data){
           setLoading(false)
           setUser(data)
+          console.log(data)
         }
       })
   }, [])
@@ -42,11 +44,12 @@ function ContentRowTop() {
       {isLoading && <p>Cargando información...</p>}
       {!isLoading && product && user &&
         <>
-          <MainBoxes user={user} product={product}/>
+        <MainBoxes user={user} product={product}/>
         
           <div className="row">
             <LastProductInDatabase product={product}/>
             <BrandsInDb product={product}/>
+            <ProductsInDb product={product}/>
           </div>
         </>  
       }
