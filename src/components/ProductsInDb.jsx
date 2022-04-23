@@ -1,5 +1,5 @@
 function ProductsInDb({product}) {
-
+console.log(product)
 
     let products = Object.values(product.data.product)
 
@@ -12,7 +12,7 @@ function ProductsInDb({product}) {
         
               <h5 className="m-0 font-weight-bold text-gray-800">
                   
-                Listado de productos
+                Listado de productos - {product.total}
               </h5>
             </div>
             <div className="card-body">
@@ -23,7 +23,7 @@ function ProductsInDb({product}) {
                     <a target="_blank" href={`http://localhost:3003/products/detail/${oneProduct.id}`}>
                     <div className="card bg-dark text-white shadow">
                       <div className="card-body">
-                        Producto: {oneProduct.name} - MARCA: {oneProduct.brands}
+                        {oneProduct.name} - {oneProduct.brands} - $ {oneProduct.price}
                       </div>
                     </div>
                       </a>

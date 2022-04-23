@@ -1,5 +1,4 @@
 function LastProductInDatabase({product}) {
-  // console.log("PRODUCT", product.data.product.pop())
 
   const lastProduct = product.data.product.slice(-1)
 
